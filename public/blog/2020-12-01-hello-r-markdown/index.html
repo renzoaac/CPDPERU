@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+
+  
+  <title>Hello R Markdown</title>
+
+  
+  
+  <link rel="stylesheet" href="/css/hugo-octopress.css">
+
+  
+  
+
+  
+    <link rel="stylesheet" href="/css/fork-awesome.min.css">
+  
+
+  
+  <link href="https://example.com/favicon.png" rel="icon">
+
+  
+  
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="">
+  <meta name="author" content="Author">
+
+  
+  <meta name="generator" content="Hugo 0.92.2" />
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+</head>
+<body>
+
+
+<header role="banner">
+<hgroup>
+  
+  <h1><a href="https://example.com/">Site title</a></h1>
+    <h2>Subtitle appears under the website title</h2>
+</hgroup></header>
+
+
+<nav role="navigation">
+<fieldset class="mobile-nav">
+  
+  <select onchange="location = this.value;">
+    <option value="">Navigate…</option>
+      
+        <option value="https://www.example.net/">» example.net</option>
+      
+        <option value="https://www.github.com/parsiya/hugo-octopress">» This theme on Github</option>
+      
+  </select>
+</fieldset>
+
+
+<ul class="main-navigation">
+  
+  
+    
+      <li><a href="https://www.example.net/" title="example.net"  target="_blank"  rel="noopener noreferrer">example.net</a></li>
+    
+  
+    
+      <li><a href="https://www.github.com/parsiya/hugo-octopress" title="This theme on Github"  target="_blank"  rel="noopener noreferrer">This theme on Github</a></li>
+    
+  
+</ul>
+
+<ul class="subscription">
+  
+    
+        <a href="https://example.com/index.xml" target="_blank" type="application/rss+xml" title="RSS" rel="noopener noreferrer"><i class="fa fa-rss-square fa-lg"></i></a>
+    
+  
+</ul>
+
+
+  <form action="https://www.google.com/search" method="get" target="_blank" rel="noopener noreferrer">
+    <fieldset role="search">
+      <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+      <input type="hidden" name="q" value="site:https://example.com/" />
+    </fieldset>
+  </form>
+
+</nav>
+
+
+<div id="main">
+  <div id="content">
+    <div>
+      <article class="hentry" role="article">
+
+        
+        
+
+<header>
+  <p class="meta">Dec 1, 2020
+     - 1 minute read 
+    
+
+    
+    
+      - <a class="label" href="https://example.com/categories/r/">R </a>
+    
+  </p>
+  <h1 class="entry-title">
+     Hello R Markdown 
+  </h1>
+</header>
+
+
+        <div class="entry-content">
+          
+          
+          
+          
+<script src="https://example.com/blog/2020-12-01-hello-r-markdown/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="r-markdown" class="section level1">
+<h1>R Markdown</h1>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+fit &lt;- lm(dist ~ speed, data = cars)
+fit
+## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Coefficients:
+## (Intercept)        speed  
+##     -17.579        3.932</code></pre>
+</div>
+<div id="including-plots" class="section level1">
+<h1>Including Plots</h1>
+<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
+<pre class="r"><code>par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
+  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
+  init.angle = -50, border = NA
+)</code></pre>
+<div class="figure"><span style="display:block;" id="fig:pie"></span>
+<img src="https://example.com/blog/2020-12-01-hello-r-markdown/index_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
+<p class="caption">
+Figure 1: A fancy pie chart.
+</p>
+</div>
+</div>
+
+        </div>
+        
+
+<footer>
+  <p class="meta">
+    <span class="byline author vcard">Posted by <span class="fn">Author</span></span>
+    
+    <time>Dec 1, 2020</time>
+    
+      <span class="categories">
+        Tags:
+        
+          <a class="category" href="https://example.com/tags/r-markdown">R Markdown</a>  <a class="category" href="https://example.com/tags/plot">plot</a>  <a class="category" href="https://example.com/tags/regression">regression</a>  
+    
+    </span>
+  </p>
+
+  
+
+  <p class="meta">
+    
+        <a class="basic-alignment left" href="https://example.com/blog/2014-04-02-hugo-template-primer/" title="(Hu)go Template Primer">(Hu)go Template Primer</a>
+    
+
+    
+      <a class="basic-alignment right" href="https://example.com/blog/2021-02-14-shortcodes-in-action/" title="Shortcodes In Action">Shortcodes In Action</a>
+    
+  </p>
+  
+</footer>
+
+      </article>
+    </div>
+    
+
+<aside class="sidebar thirds">
+  <section class="first odd">
+
+    
+      <h1>Sidebar Header</h1>
+    
+
+    <p>
+      
+        <p>Here&rsquo;s a <a href="https://www.example.net">link to example.net</a></p>
+<p>New paragraph</p>
+<p>Another paragraph which has two spaces in the end to create a new line using markdown<br>
+New line but not a new paragraph</p>
+
+      
+    </p>
+  </section>
+
+
+
+  
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/parsiya/Hugo-Octopress" title="https://github.com/parsiya/Hugo-Octopress"><i class="fa fa-github fa-3x"></i></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/parsiya/" title="https://bitbucket.org/parsiya/"><i class="fa fa-bitbucket fa-3x"></i></a>
+      
+      <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/cryptogangsta/" title="https://twitter.com/cryptogangsta/"><i class="fa fa-twitter fa-3x"></i></a>
+      
+         
+      
+      
+      
+      
+      
+      
+      
+
+    
+    
+    </li>
+  </ul>
+
+  
+
+  
+    
+      <section class="odd">
+        
+          <h1>Sidebar Links</h1>
+        
+        
+          <li>
+            <a href="https://www.github.com/parsiya/hugo-octopress" title="This theme on Github" >This theme on Github</a>
+          </li>
+        
+          <li>
+            <a href="https://www.example.net" title="example.net" >example.net</a>
+          </li>
+        
+      </section>
+    
+  
+
+  
+  
+  
+    
+      <section class="even">
+        <h1>Recent Posts</h1>
+        <ul id="recent_posts">
+          
+          
+            
+          
+            
+              <li class="post">
+                <a href="/blog/2021-02-14-shortcodes-in-action/">Shortcodes In Action</a>
+              </li>
+            
+          
+            
+              <li class="post">
+                <a href="/blog/2020-12-01-hello-r-markdown/">Hello R Markdown</a>
+              </li>
+            
+          
+            
+              <li class="post">
+                <a href="/blog/2014-04-02-hugo-template-primer/">(Hu)go Template Primer</a>
+              </li>
+            
+          
+            
+              <li class="post">
+                <a href="/blog/2014-04-02-getting-started-with-hugo/">Getting Started with Hugo</a>
+              </li>
+            
+          
+        </ul>
+      </section>
+    
+  
+</aside>
+
+  </div>
+</div>
+
+    <footer role="contentinfo">
+      <p>Copyright &copy; 2022 Author - <a href="https://example.com/license/">License</a> -
+        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io" rel="noopener noreferrer">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/" rel="noopener noreferrer">Hugo-Octopress</a> theme.
+      </p>
+    </footer>
+
+    
+    
+
+
+
+    
+    
+    
+
+    
+  </body>
+</html>
+
