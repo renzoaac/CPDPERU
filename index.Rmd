@@ -7,7 +7,7 @@ output:
   html_document:
     toc: TRUE
     toc_float: TRUE
-    code_download: TRUE
+    code_download: FALSE
     theme: flatly
     css: "style_002.css"
 github_repo: https://github.com/renzoaac/CPDPERU
