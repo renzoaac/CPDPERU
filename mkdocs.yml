@@ -1,8 +1,0 @@
-site_name: CPDPERU
-site_author: Renzo Álvarez Carcheri
-site_url: https://https://renzoaac.github.io/CPDPERU/
-theme:
-   name: material
-markdown_extensions:
-   - toc:
-      permalink: []
