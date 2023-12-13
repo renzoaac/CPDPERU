@@ -1,5 +1,5 @@
 ---
-title: "Bar Charts - R"
+title: "Comunidad para el Desarrollo"
 subtitle: "barplot() - ggplot2 - lattice"
 author: "Renzo Cáceres Rossi"
 date: "2022/10/07"
