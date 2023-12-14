@@ -8,8 +8,8 @@ All chapter sections start with a second-level (`##`) or higher heading followed
 
 ```{r, include=FALSE}
 library(Statamarkdown)
-statapath <- "C:/Users/renzo/OneDrive/Escritorio/Stata16.exe"
-knitr::opts_chunk$set(engine.path=list(stata=statapath), comment=NA)
+statapath <- "D:/OneDrive - Superintendencia Nacional de Servicios de Saneamiento/Escritorio/Stata16/StataMP-64.exe"
+knitr::opts_chunk$set(engine.path=list(stata=statapath))
 ```
 
 

@@ -241,6 +241,24 @@ div.csl-indent {
 <p>All chapter sections start with a second-level (<code>##</code>) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb1-1"><a href="aspectos-básicos.html#cb1-1" tabindex="-1"></a><span class="kw">sysuse</span> auto, <span class="kw">clear</span></span>
 <span id="cb1-2"><a href="aspectos-básicos.html#cb1-2" tabindex="-1"></a><span class="kw">summarize</span></span></code></pre></div>
+<pre><code>(1978 Automobile Data)
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+        make |          0
+       price |         74    6165.257    2949.496       3291      15906
+         mpg |         74     21.2973    5.785503         12         41
+       rep78 |         69    3.405797    .9899323          1          5
+    headroom |         74    2.993243    .8459948        1.5          5
+-------------+---------------------------------------------------------
+       trunk |         74    13.75676    4.277404          5         23
+      weight |         74    3019.459    777.1936       1760       4840
+      length |         74    187.9324    22.26634        142        233
+        turn |         74    39.64865    4.399354         31         51
+displacement |         74    197.2973    91.83722         79        425
+-------------+---------------------------------------------------------
+  gear_ratio |         74    3.014865    .4562871       2.19       3.89
+     foreign |         74    .2972973    .4601885          0          1</code></pre>
 <div id="an-unnumbered-section" class="section level3 unnumbered hasAnchor">
 <h3>An unnumbered section<a href="aspectos-básicos.html#an-unnumbered-section" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Chapters and sections are numbered by default. To un-number a heading, add a <code>{.unnumbered}</code> or the shorter <code>{-}</code> at the end of the heading, like in this section.</p>
