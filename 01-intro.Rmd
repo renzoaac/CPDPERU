@@ -51,12 +51,21 @@ sysuse auto, clear
 summarize price, detail
 ```
 
+Otro comando que usaremos frecuentemente es el comando `codebook` ya que nos permitirá obtener información complementaria a la antes vista, esta vez sin importar si la variable es número o texto. Utilicemos este comando para la variable de tipo texto llamada marca (make).
 
+```{stata, results='hide'}
+codebook make
+```
 
-### An unnumbered section {-}
+```{stata, echo=FALSE}
+sysuse auto, clear
+codebook make
+```
 
-Chapters and sections are numbered by default. To un-number a heading, add a `{.unnumbered}` or the shorter `{-}` at the end of the heading, like in this section.
+Como acabamos de ver, el comando `codebook` nos muestra información muy importante para cualquier analista de datos, en particular, sobre los valores únicos (unique values) y valores pérdidos (missing values). En este caso, Stata nos señala que la variable marca (make) tiene 74 valores único y 0/74 missings values. Esto último significa que los autos de la muestra los componen 74 autos de marcas diferentes, de los cuales para el 100% de la muestra se encuentra dicha información.
 
-## Variables, etiquetas y más
+## Tipo de variables y formatos
+
+Profundicemos un poco sobre los tipos de variables y formatos ya que son parte fundamental en la gestión de datos. Lo primero que debemos saber es que existen 3 tipos de variables: númericas, textos y boleanas.
 
 ## Principales comandos

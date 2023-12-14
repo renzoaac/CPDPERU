@@ -314,6 +314,26 @@ displacement |         74    197.2973    91.83722         79        425
 90%        11385          13594       Variance        8699526
 95%        13466          14500       Skewness       1.653434
 99%        15906          15906       Kurtosis       4.819188</code></pre>
+<p>Otro comando que usaremos frecuentemente es el comando <code>codebook</code> ya que nos permitirá obtener información complementaria a la antes vista, esta vez sin importar si la variable es número o texto. Utilicemos este comando para la variable de tipo texto llamada marca (make).</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb7-1"><a href="empezando-a-programar.html#cb7-1" tabindex="-1"></a><span class="kw">codebook</span> make</span></code></pre></div>
+<pre><code>(1978 Automobile Data)
+
+
+-------------------------------------------------------------------------------
+make                                                             Make and Model
+-------------------------------------------------------------------------------
+
+                  type:  string (str18), but longest is str17
+
+         unique values:  74                       missing &quot;&quot;:  0/74
+
+              examples:  &quot;Cad. Deville&quot;
+                         &quot;Dodge Magnum&quot;
+                         &quot;Merc. XR-7&quot;
+                         &quot;Pont. Catalina&quot;
+
+               warning:  variable has embedded blanks</code></pre>
+<p>Como acabamos de ver, el comando <code>codebook</code> nos muestra información muy importante para cualquier analista de datos, en particular, sobre los valores únicos (unique values) y valores pérdidos (missing values). En este dataset La razón de su importancia será explicada cuando utilicemos las encuestas ya que será en donde las aprovecharemos al máximo.</p>
 </div>
 <div id="an-unnumbered-section" class="section level3 unnumbered hasAnchor">
 <h3>An unnumbered section<a href="empezando-a-programar.html#an-unnumbered-section" class="anchor-section" aria-label="Anchor link to header"></a></h3>
