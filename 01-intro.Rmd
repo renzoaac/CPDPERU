@@ -2,9 +2,19 @@
 
 All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
 
+## Uso del do-file editor
+
+## Uso del comando Help
+
+# Empezando a programar
+
 ## Carga de datos
 
-All chapter sections start with a second-level (`##`) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
+En Stata podemos cargar datos internos y externos. Los primeros podemos llamarlos a través del comando `help dta_examples`. Al ejecutar este comando, veremos que dispondremos de más de 25 conjuntos de datos los cuales podemos llamar usando el comando `sysuse`. Para los datos externos de formato .dta usaremos el comando `use`, mientras que para otros formatos como .csv, .xls, .xlsx, .dbf, entre otros; se usará el comando `import`.    
+
+### Datos internos
+
+En Stata es 
 
 ```{r, include=FALSE}
 library(Statamarkdown)

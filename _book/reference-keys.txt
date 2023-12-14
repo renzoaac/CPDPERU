@@ -35,3 +35,7 @@ uso-de-globals-y-locals
 uso-de-comandos-forvalue-y-foreach
 almacenamiento-y-reporte-de-resultados
 url-your-book-url-like-httpsbookdown.orgyihuibookdown
+datos-internos
+uso-del-do-file-editor
+uso-del-comando-help
+empezando-a-programar
