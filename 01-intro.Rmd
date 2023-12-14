@@ -14,7 +14,7 @@ En Stata podemos cargar datos internos y externos. Los primeros podemos llamarlo
 
 ### Datos internos
 
-En Stata es 
+Para este ejemplo, usaremos el conjunto de datos interno "auto" seguido de la opción `clear` ya que nos permite limpiar la memoria de cualquier otro dataset usado previamente. Seguido de ello, usaremos el comando `describe` para que Stata nos brinde una descripción general de dicho dataset.
 
 ```{r, include=FALSE}
 library(Statamarkdown)
@@ -22,11 +22,22 @@ statapath <- "D:/OneDrive - Superintendencia Nacional de Servicios de Saneamient
 knitr::opts_chunk$set(engine.path=list(stata=statapath))
 ```
 
+```{stata}
+sysuse auto, clear
+describe
+```
+
+Inmediatamente Stata nos informa que la data esta relacionada con datos asociados a automóviles del año 1978, la cual exhibe 74 observaciones con 12 variables que, al hacer una lectura rápida de la columna de etiquetas de la variable (variable label), están vinculadas a las características físicas de los vehículos tales como: el peso (weight) y el largo (length), así como el espacio de la maletera (trunk) y el espacio libre (headroom). Asimismo, existen variables asociadas al precio (price), millas recorridas por galón (mpg), entre otras. Finalmente, es importante resaltar que de las 12 variables, 11 de ellas son de tipo numérico y solo 1 de tipo texto o cadena. 
+
+Para seguir conociendo este dataset, ahora usaremos el comando `summarize` con la finalidad de que Stata nos muestre los principales estadísticos descriptivos de la data
+
 
 ```{stata}
 sysuse auto, clear
 summarize
 ```
+
+
 
 ### An unnumbered section {-}
 

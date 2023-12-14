@@ -246,9 +246,39 @@ div.csl-indent {
 <p>En Stata podemos cargar datos internos y externos. Los primeros podemos llamarlos a través del comando <code>help dta_examples</code>. Al ejecutar este comando, veremos que dispondremos de más de 25 conjuntos de datos los cuales podemos llamar usando el comando <code>sysuse</code>. Para los datos externos de formato .dta usaremos el comando <code>use</code>, mientras que para otros formatos como .csv, .xls, .xlsx, .dbf, entre otros; se usará el comando <code>import</code>.</p>
 <div id="datos-internos" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Datos internos<a href="empezando-a-programar.html#datos-internos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>En Stata es</p>
+<p>Para este ejemplo, usaremos el conjunto de datos interno “auto” seguido de la opción <code>clear</code> ya que nos permite limpiar la memoria de cualquier otro dataset usado previamente. Seguido de ello, usaremos el comando <code>describe</code> para que Stata nos brinde una descripción general de dicho dataset.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb1-1"><a href="empezando-a-programar.html#cb1-1" tabindex="-1"></a><span class="kw">sysuse</span> auto, <span class="kw">clear</span></span>
-<span id="cb1-2"><a href="empezando-a-programar.html#cb1-2" tabindex="-1"></a><span class="kw">summarize</span></span></code></pre></div>
+<span id="cb1-2"><a href="empezando-a-programar.html#cb1-2" tabindex="-1"></a><span class="kw">describe</span></span></code></pre></div>
+<pre><code>(1978 Automobile Data)
+
+
+Contains data from D:\OneDrive - Superintendencia Nacional de Servicios de Sane
+&gt; amiento\Escritorio\Stata16\ado\base/a/auto.dta
+  obs:            74                          1978 Automobile Data
+ vars:            12                          13 Apr 2018 17:45
+                                              (_dta has notes)
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+make            str18   %-18s                 Make and Model
+price           int     %8.0gc                Price
+mpg             int     %8.0g                 Mileage (mpg)
+rep78           int     %8.0g                 Repair Record 1978
+headroom        float   %6.1f                 Headroom (in.)
+trunk           int     %8.0g                 Trunk space (cu. ft.)
+weight          int     %8.0gc                Weight (lbs.)
+length          int     %8.0g                 Length (in.)
+turn            int     %8.0g                 Turn Circle (ft.)
+displacement    int     %8.0g                 Displacement (cu. in.)
+gear_ratio      float   %6.2f                 Gear Ratio
+foreign         byte    %8.0g      origin     Car type
+-------------------------------------------------------------------------------
+Sorted by: foreign</code></pre>
+<p>Inmediatamente Stata nos informa que la data esta relacionada con datos asociados a automóviles del año 1978, la cual exhibe 74 observaciones con 12 variables que, al hacer una lectura rápida de la columna de etiquetas de la variable (variable label), están vinculadas a las características físicas de los vehículos tales como: el peso (weight) y el largo (length), así como el espacio de la maletera (trunk) y el espacio libre (headroom). Asimismo, existen variables asociadas al precio (price), millas recorridas por galón (mpg), entre otras. Finalmente, es importante resaltar que de las 12 variables, 11 de ellas son de tipo numérico y solo 1 de tipo texto o cadena.</p>
+<p>Para seguir conociendo este dataset, ahora usaremos el comando <code>summarize</code> con la finalidad de que Stata nos muestre los principales estadísticos descriptivos de la data</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb3-1"><a href="empezando-a-programar.html#cb3-1" tabindex="-1"></a><span class="kw">sysuse</span> auto, <span class="kw">clear</span></span>
+<span id="cb3-2"><a href="empezando-a-programar.html#cb3-2" tabindex="-1"></a><span class="kw">summarize</span></span></code></pre></div>
 <pre><code>(1978 Automobile Data)
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
