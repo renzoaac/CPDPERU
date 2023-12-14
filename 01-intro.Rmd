@@ -8,7 +8,7 @@ All chapters start with a first-level heading followed by your chapter title, li
 
 # Empezando a programar
 
-## Carga de datos
+## Carga y análisis descriptivo de datos
 
 En Stata podemos cargar datos internos y externos. Los primeros podemos llamarlos a través del comando `help dta_examples`. Al ejecutar este comando, veremos que dispondremos de más de 25 conjuntos de datos los cuales podemos llamar usando el comando `sysuse`. Para los datos externos de formato .dta usaremos el comando `use`, mientras que para otros formatos como .csv, .xls, .xlsx, .dbf, entre otros; se usará el comando `import`.    
 
@@ -65,6 +65,19 @@ codebook make
 Como acabamos de ver, el comando `codebook` nos muestra información muy importante para cualquier analista de datos, en particular, sobre los valores únicos (unique values) y valores pérdidos (missing values). En este caso, Stata nos señala que la variable marca (make) tiene 74 valores único y 0/74 missings values. Esto último significa que los autos de la muestra los componen 74 autos de marcas diferentes, de los cuales para el 100% de la muestra se encuentra dicha información.
 
 ### Datos externos
+
+Stata puede importar sin ningún problema datos en formato .dta; para cuáles son las posibilidades que tenemos para importar archivos debemos escribir el comando `help import`. La ventana que muestra el Stata permite observar todos los formatos compatibles a importar, por lo que solo bastaría tener claridad de que tipo de formato queremos importar para acceder a la sintaxis y empezar a cargar nuestros datos. Aquí un ejemplo con los archivos excel.
+
+```{stata, results='hide'}
+import excel "", firstrow sheet("Sheet1") clear
+```
+
+```{stata, echo=FALSE}
+sysuse auto, clear
+codebook make
+```
+
+#### Importar archivos excel
 
 ## Tipo de variables y formatos
 

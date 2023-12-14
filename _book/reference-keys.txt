@@ -41,3 +41,6 @@ uso-del-comando-help
 empezando-a-programar
 tipo-de-variables-y-formatos
 tipos-de-almacenamiento
+carga-y-análisis-descriptivo-de-datos
+datos-externos
+importar-archivos-excel

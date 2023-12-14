@@ -176,9 +176,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html"><i class="fa fa-check"></i><b>3</b> Empezando a programar</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#carga-de-datos"><i class="fa fa-check"></i><b>3.1</b> Carga de datos</a>
+<li class="chapter" data-level="3.1" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#carga-y-análisis-descriptivo-de-datos"><i class="fa fa-check"></i><b>3.1</b> Carga y análisis descriptivo de datos</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#datos-internos"><i class="fa fa-check"></i><b>3.1.1</b> Datos internos</a></li>
+<li class="chapter" data-level="3.1.2" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#datos-externos"><i class="fa fa-check"></i><b>3.1.2</b> Datos externos</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#tipo-de-variables-y-formatos"><i class="fa fa-check"></i><b>3.2</b> Tipo de variables y formatos</a>
 <ul>
@@ -243,8 +244,8 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="empezando-a-programar" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Empezando a programar<a href="empezando-a-programar.html#empezando-a-programar" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="carga-de-datos" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Carga de datos<a href="empezando-a-programar.html#carga-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="carga-y-análisis-descriptivo-de-datos" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Carga y análisis descriptivo de datos<a href="empezando-a-programar.html#carga-y-análisis-descriptivo-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En Stata podemos cargar datos internos y externos. Los primeros podemos llamarlos a través del comando <code>help dta_examples</code>. Al ejecutar este comando, veremos que dispondremos de más de 25 conjuntos de datos los cuales podemos llamar usando el comando <code>sysuse</code>. Para los datos externos de formato .dta usaremos el comando <code>use</code>, mientras que para otros formatos como .csv, .xls, .xlsx, .dbf, entre otros; se usará el comando <code>import</code>.</p>
 <div id="datos-internos" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Datos internos<a href="empezando-a-programar.html#datos-internos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -336,6 +337,31 @@ make                                                             Make and Model
 
                warning:  variable has embedded blanks</code></pre>
 <p>Como acabamos de ver, el comando <code>codebook</code> nos muestra información muy importante para cualquier analista de datos, en particular, sobre los valores únicos (unique values) y valores pérdidos (missing values). En este caso, Stata nos señala que la variable marca (make) tiene 74 valores único y 0/74 missings values. Esto último significa que los autos de la muestra los componen 74 autos de marcas diferentes, de los cuales para el 100% de la muestra se encuentra dicha información.</p>
+</div>
+<div id="datos-externos" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Datos externos<a href="empezando-a-programar.html#datos-externos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Stata puede importar sin ningún problema datos en formato .dta; para cuáles son las posibilidades que tenemos para importar archivos debemos escribir el comando <code>help import</code>. La ventana que muestra el Stata permite observar todos los formatos compatibles a importar, por lo que solo bastaría tener claridad de que tipo de formato queremos importar para acceder a la sintaxis y empezar a cargar nuestros datos. Aquí un ejemplo con los archivos excel.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb9-1"><a href="empezando-a-programar.html#cb9-1" tabindex="-1"></a>import excel <span class="st">&quot;&quot;</span>, firstrow sheet(<span class="st">&quot;Sheet1&quot;</span>) <span class="kw">clear</span></span></code></pre></div>
+<pre><code>(1978 Automobile Data)
+
+
+-------------------------------------------------------------------------------
+make                                                             Make and Model
+-------------------------------------------------------------------------------
+
+                  type:  string (str18), but longest is str17
+
+         unique values:  74                       missing &quot;&quot;:  0/74
+
+              examples:  &quot;Cad. Deville&quot;
+                         &quot;Dodge Magnum&quot;
+                         &quot;Merc. XR-7&quot;
+                         &quot;Pont. Catalina&quot;
+
+               warning:  variable has embedded blanks</code></pre>
+<div id="importar-archivos-excel" class="section level4 hasAnchor" number="3.1.2.1">
+<h4><span class="header-section-number">3.1.2.1</span> Importar archivos excel<a href="empezando-a-programar.html#importar-archivos-excel" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
 </div>
 </div>
 <div id="tipo-de-variables-y-formatos" class="section level2 hasAnchor" number="3.2">
