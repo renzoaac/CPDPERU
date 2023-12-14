@@ -113,13 +113,20 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={A Minimal Book Example},
-  pdfauthor={John Doe},
+  pdftitle={Comunidad para el Desarrollo},
+  pdfauthor={Renzo Álvarez Carcheri},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{A Minimal Book Example}
-\author{John Doe}
+\title{Comunidad para el Desarrollo}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{STATA para economistas}
+\author{Renzo Álvarez Carcheri}
 \date{2023-12-13}
 
 \usepackage{amsthm}
@@ -146,13 +153,13 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{about}{%
-\chapter{About}\label{about}}
+\hypertarget{introducciuxf3n}{%
+\chapter{Introducción}\label{introducciuxf3n}}
 
 This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).
 
-\hypertarget{usage}{%
-\section{Usage}\label{usage}}
+\hypertarget{usos}{%
+\section{Usos}\label{usos}}
 
 Each \textbf{bookdown} chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter \emph{must} start with a first-level heading: \texttt{\#\ A\ good\ chapter}, and can contain one (and only one) first-level heading.
 
@@ -160,8 +167,8 @@ Use second-level and higher headings within chapters like: \texttt{\#\#\ A\ shor
 
 The \texttt{index.Rmd} file is required, and is also your first book chapter. It will be the homepage when you render the book.
 
-\hypertarget{render-book}{%
-\section{Render book}\label{render-book}}
+\hypertarget{instalaciuxf3n}{%
+\section{Instalación}\label{instalaciuxf3n}}
 
 You can render the HTML version of this example book without changing anything:
 
@@ -183,8 +190,8 @@ Or build the book from the R console:
 
 To render this example to PDF as a \texttt{bookdown::pdf\_book}, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
 
-\hypertarget{preview-book}{%
-\section{Preview book}\label{preview-book}}
+\hypertarget{recomendaciones}{%
+\section{Recomendaciones}\label{recomendaciones}}
 
 As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in ``Preview book'', or from the R console:
 

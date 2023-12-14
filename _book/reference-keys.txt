@@ -1,10 +1,10 @@
 fig:nice-fig
 tab:nice-tab
 eq:binom
-about
-usage
-render-book
-preview-book
+introducción
+usos
+instalación
+recomendaciones
 hello-bookdown
 a-section
 cross
