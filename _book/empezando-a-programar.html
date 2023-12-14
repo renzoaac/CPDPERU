@@ -179,9 +179,11 @@ div.csl-indent {
 <li class="chapter" data-level="3.1" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#carga-de-datos"><i class="fa fa-check"></i><b>3.1</b> Carga de datos</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#datos-internos"><i class="fa fa-check"></i><b>3.1.1</b> Datos internos</a></li>
-<li class="chapter" data-level="" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#variables-etiquetas-y-más"><i class="fa fa-check"></i><b>3.2</b> Variables, etiquetas y más</a></li>
+<li class="chapter" data-level="3.2" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#tipo-de-variables-y-formatos"><i class="fa fa-check"></i><b>3.2</b> Tipo de variables y formatos</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#tipos-de-almacenamiento"><i class="fa fa-check"></i><b>3.2.1</b> Tipos de almacenamiento</a></li>
+</ul></li>
 <li class="chapter" data-level="3.3" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#principales-comandos"><i class="fa fa-check"></i><b>3.3</b> Principales comandos</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>4</b> Explorando la ENAHO</a>
@@ -333,15 +335,18 @@ make                                                             Make and Model
                          &quot;Pont. Catalina&quot;
 
                warning:  variable has embedded blanks</code></pre>
-<p>Como acabamos de ver, el comando <code>codebook</code> nos muestra información muy importante para cualquier analista de datos, en particular, sobre los valores únicos (unique values) y valores pérdidos (missing values). En este dataset La razón de su importancia será explicada cuando utilicemos las encuestas ya que será en donde las aprovecharemos al máximo.</p>
-</div>
-<div id="an-unnumbered-section" class="section level3 unnumbered hasAnchor">
-<h3>An unnumbered section<a href="empezando-a-programar.html#an-unnumbered-section" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Chapters and sections are numbered by default. To un-number a heading, add a <code>{.unnumbered}</code> or the shorter <code>{-}</code> at the end of the heading, like in this section.</p>
+<p>Como acabamos de ver, el comando <code>codebook</code> nos muestra información muy importante para cualquier analista de datos, en particular, sobre los valores únicos (unique values) y valores pérdidos (missing values). En este caso, Stata nos señala que la variable marca (make) tiene 74 valores único y 0/74 missings values. Esto último significa que los autos de la muestra los componen 74 autos de marcas diferentes, de los cuales para el 100% de la muestra se encuentra dicha información.</p>
 </div>
 </div>
-<div id="variables-etiquetas-y-más" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Variables, etiquetas y más<a href="empezando-a-programar.html#variables-etiquetas-y-más" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tipo-de-variables-y-formatos" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Tipo de variables y formatos<a href="empezando-a-programar.html#tipo-de-variables-y-formatos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Profundicemos un poco sobre las variables y formatos ya que son parte fundamental en la gestión de datos. Afortunadamente, en Stata trabajaremos con solo variables de clase númerica y texto por lo que no será muy complejo abordar esta sección.</p>
+<div id="tipos-de-almacenamiento" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Tipos de almacenamiento<a href="empezando-a-programar.html#tipos-de-almacenamiento" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las variables numéricas y se almacenará en la memoria a través de diferentes tipologías. Comenzando por las variables numéricas tenemos los siguientes tipos de almacenamiento: byte, int, long, float y double.</p>
+<p>Cada tipología esta directamente relacionado con su tamaño de almacenamiento en términos de “bytes”. Así, una variable númerica de tipo “byte” tendrá un peso de 1 “bytes” en la memoria, de modo que este tipo de variable estará usualmente asociada con números de hasta 3 caracteres.</p>
+<p>Al escribir el comando <code>help Data types</code> podemos observar todas las tipologías tanto para las variables numéricas y texto, las cuales siguen la misma lógica del párrafo anterior.</p>
+</div>
 </div>
 <div id="principales-comandos" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Principales comandos<a href="empezando-a-programar.html#principales-comandos" class="anchor-section" aria-label="Anchor link to header"></a></h2>

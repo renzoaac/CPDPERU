@@ -39,3 +39,5 @@ datos-internos
 uso-del-do-file-editor
 uso-del-comando-help
 empezando-a-programar
+tipo-de-variables-y-formatos
+tipos-de-almacenamiento
