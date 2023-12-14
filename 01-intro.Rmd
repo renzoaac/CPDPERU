@@ -29,12 +29,26 @@ describe
 
 Inmediatamente Stata nos informa que la data esta relacionada con datos asociados a automóviles del año 1978, la cual exhibe 74 observaciones con 12 variables que, al hacer una lectura rápida de la columna de etiquetas de la variable (variable label), están vinculadas a las características físicas de los vehículos tales como: el peso (weight) y el largo (length), así como el espacio de la maletera (trunk) y el espacio libre (headroom). Asimismo, existen variables asociadas al precio (price), millas recorridas por galón (mpg), entre otras. Finalmente, es importante resaltar que de las 12 variables, 11 de ellas son de tipo numérico y solo 1 de tipo texto o cadena. 
 
-Para seguir conociendo este dataset, ahora usaremos el comando `summarize` con la finalidad de que Stata nos muestre los principales estadísticos descriptivos de la data
+Para seguir conociendo este dataset, ahora usaremos el comando `summarize` con la finalidad de que Stata nos muestre los principales estadísticos descriptivos de la data.
 
+```{stata, results='hide'}
+summarize
+```
 
-```{stata}
+```{stata, echo=FALSE}
 sysuse auto, clear
 summarize
+```
+
+La tabla nos muestra estadísticos descriptivos básicos como la media, desviación estándar y los valores mínimos y máximos. Como se observa, estos estadísticos son aplicables solo a variables numéricas, por esa razón el contenido de la tabla para la variable marca (make) esta vacía. Asimismo, podemos utilizar la opción del comando `summarize` denominado `detail` para obtener información estadística adicional como la varianza, el sesgo y la kurtosis, así como una serie de percentiles que nos permitirán realizar un análisis descriptivo más detallado. Empleemos este comando con la variable precio (price):
+
+```{stata, results='hide'}
+summarize price, detail
+```
+
+```{stata, echo=FALSE}
+sysuse auto, clear
+summarize price, detail
 ```
 
 

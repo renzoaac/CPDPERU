@@ -276,9 +276,8 @@ foreign         byte    %8.0g      origin     Car type
 -------------------------------------------------------------------------------
 Sorted by: foreign</code></pre>
 <p>Inmediatamente Stata nos informa que la data esta relacionada con datos asociados a automóviles del año 1978, la cual exhibe 74 observaciones con 12 variables que, al hacer una lectura rápida de la columna de etiquetas de la variable (variable label), están vinculadas a las características físicas de los vehículos tales como: el peso (weight) y el largo (length), así como el espacio de la maletera (trunk) y el espacio libre (headroom). Asimismo, existen variables asociadas al precio (price), millas recorridas por galón (mpg), entre otras. Finalmente, es importante resaltar que de las 12 variables, 11 de ellas son de tipo numérico y solo 1 de tipo texto o cadena.</p>
-<p>Para seguir conociendo este dataset, ahora usaremos el comando <code>summarize</code> con la finalidad de que Stata nos muestre los principales estadísticos descriptivos de la data</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb3-1"><a href="empezando-a-programar.html#cb3-1" tabindex="-1"></a><span class="kw">sysuse</span> auto, <span class="kw">clear</span></span>
-<span id="cb3-2"><a href="empezando-a-programar.html#cb3-2" tabindex="-1"></a><span class="kw">summarize</span></span></code></pre></div>
+<p>Para seguir conociendo este dataset, ahora usaremos el comando <code>summarize</code> con la finalidad de que Stata nos muestre los principales estadísticos descriptivos de la data.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb3-1"><a href="empezando-a-programar.html#cb3-1" tabindex="-1"></a><span class="kw">summarize</span></span></code></pre></div>
 <pre><code>(1978 Automobile Data)
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
@@ -297,6 +296,24 @@ displacement |         74    197.2973    91.83722         79        425
 -------------+---------------------------------------------------------
   gear_ratio |         74    3.014865    .4562871       2.19       3.89
      foreign |         74    .2972973    .4601885          0          1</code></pre>
+<p>La tabla nos muestra estadísticos descriptivos básicos como la media, desviación estándar y los valores mínimos y máximos. Como se observa, estos estadísticos son aplicables solo a variables numéricas, por esa razón el contenido de la tabla para la variable marca (make) esta vacía. Asimismo, podemos utilizar la opción del comando <code>summarize</code> denominado <code>detail</code> para obtener información estadística adicional como la varianza, el sesgo y la kurtosis, así como una serie de percentiles que nos permitirán realizar un análisis descriptivo más detallado. Empleemos este comando con la variable precio (price):</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb5-1"><a href="empezando-a-programar.html#cb5-1" tabindex="-1"></a><span class="kw">summarize</span> price, <span class="kw">detail</span></span></code></pre></div>
+<pre><code>(1978 Automobile Data)
+
+                            Price
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%         3291           3291
+ 5%         3748           3299
+10%         3895           3667       Obs                  74
+25%         4195           3748       Sum of Wgt.          74
+
+50%       5006.5                      Mean           6165.257
+                        Largest       Std. Dev.      2949.496
+75%         6342          13466
+90%        11385          13594       Variance        8699526
+95%        13466          14500       Skewness       1.653434
+99%        15906          15906       Kurtosis       4.819188</code></pre>
 </div>
 <div id="an-unnumbered-section" class="section level3 unnumbered hasAnchor">
 <h3>An unnumbered section<a href="empezando-a-programar.html#an-unnumbered-section" class="anchor-section" aria-label="Anchor link to header"></a></h3>
