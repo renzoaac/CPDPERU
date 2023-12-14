@@ -1,10 +1,10 @@
-# Footnotes and citations 
+# Análisis inferencial
 
-## Footnotes
+## Revisión del modelos de regresión
 
 Footnotes are put inside the square brackets after a caret `^[]`. Like this one ^[This is a footnote.]. 
 
-## Citations
+## Principales comandos para regresiones
 
 Reference items in your bibliography file(s) using `@key`.
 
@@ -13,3 +13,7 @@ Note that the `.bib` files need to be listed in the index.Rmd with the YAML `bib
 
 
 The RStudio Visual Markdown Editor can also make it easier to insert citations: <https://rstudio.github.io/visual-markdown-editing/#/citations>
+
+## Inferencias con factores de expansión
+
+## Aplicación con encuestas

@@ -125,9 +125,9 @@
   \apptocmd{\@title}{\par {\large #1 \par}}{}{}
 }
 \makeatother
-\subtitle{STATA para economistas}
+\subtitle{Análisis de datos con STATA: aplicaciones con encuestas}
 \author{Renzo Álvarez Carcheri}
-\date{2023-12-13}
+\date{2023-12-14}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -190,8 +190,8 @@ Or build the book from the R console:
 
 To render this example to PDF as a \texttt{bookdown::pdf\_book}, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
 
-\hypertarget{recomendaciones}{%
-\section{Recomendaciones}\label{recomendaciones}}
+\hypertarget{entorno}{%
+\section{Entorno}\label{entorno}}
 
 As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in ``Preview book'', or from the R console:
 
@@ -201,15 +201,24 @@ As you work, you may start a local server to live preview this HTML book. This p
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{hello-bookdown}{%
-\chapter{Hello bookdown}\label{hello-bookdown}}
+\hypertarget{recomendaciones}{%
+\section{Recomendaciones}\label{recomendaciones}}
+
+\hypertarget{aspectos-buxe1sicos}{%
+\chapter{Aspectos básicos}\label{aspectos-buxe1sicos}}
 
 All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (\texttt{\#}) per .Rmd file.
 
-\hypertarget{a-section}{%
-\section{A section}\label{a-section}}
+\hypertarget{carga-de-datos}{%
+\section{Carga de datos}\label{carga-de-datos}}
 
 All chapter sections start with a second-level (\texttt{\#\#}) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sysuse}\NormalTok{ auto}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{an-unnumbered-section}{%
 \subsection*{An unnumbered section}\label{an-unnumbered-section}}
@@ -217,13 +226,19 @@ All chapter sections start with a second-level (\texttt{\#\#}) or higher heading
 
 Chapters and sections are numbered by default. To un-number a heading, add a \texttt{\{.unnumbered\}} or the shorter \texttt{\{-\}} at the end of the heading, like in this section.
 
+\hypertarget{variables-etiquetas-y-muxe1s}{%
+\section{Variables, etiquetas y más}\label{variables-etiquetas-y-muxe1s}}
+
+\hypertarget{principales-comandos}{%
+\section{Principales comandos}\label{principales-comandos}}
+
 \hypertarget{cross}{%
-\chapter{Cross-references}\label{cross}}
+\chapter{Explorando la ENAHO}\label{cross}}
 
 Cross-references make it easier for your readers to find and link to elements in your book.
 
-\hypertarget{chapters-and-sub-chapters}{%
-\section{Chapters and sub-chapters}\label{chapters-and-sub-chapters}}
+\hypertarget{uso-de-encuestas-en-el-anuxe1lisis-de-datos}{%
+\section{Uso de encuestas en el análisis de datos}\label{uso-de-encuestas-en-el-anuxe1lisis-de-datos}}
 
 There are two steps to cross-reference any heading:
 
@@ -250,8 +265,8 @@ There are two steps to cross-reference any heading:
   \end{itemize}
 \end{enumerate}
 
-\hypertarget{captioned-figures-and-tables}{%
-\section{Captioned figures and tables}\label{captioned-figures-and-tables}}
+\hypertarget{caracteruxedsticas-de-la-enaho}{%
+\section{Características de la ENAHO}\label{caracteruxedsticas-de-la-enaho}}
 
 Figures and tables \emph{with captions} can also be cross-referenced from elsewhere in your book using \texttt{\textbackslash{}@ref(fig:chunk-label)} and \texttt{\textbackslash{}@ref(tab:chunk-label)}, respectively.
 
@@ -307,8 +322,11 @@ temperature & pressure\\
 \end{tabular}
 \end{table}
 
-\hypertarget{parts}{%
-\chapter{Parts}\label{parts}}
+\hypertarget{descripciuxf3n-inicial-de-los-datos}{%
+\section{Descripción inicial de los datos}\label{descripciuxf3n-inicial-de-los-datos}}
+
+\hypertarget{gestiuxf3n-de-datos-con-enaho}{%
+\chapter{Gestión de datos con ENAHO}\label{gestiuxf3n-de-datos-con-enaho}}
 
 You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
 
@@ -318,16 +336,34 @@ Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (f
 
 Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
 
-\hypertarget{footnotes-and-citations}{%
-\chapter{Footnotes and citations}\label{footnotes-and-citations}}
+\hypertarget{gestiuxf3n-del-muxf3dulo-100}{%
+\section{Gestión del módulo 100}\label{gestiuxf3n-del-muxf3dulo-100}}
 
-\hypertarget{footnotes}{%
-\section{Footnotes}\label{footnotes}}
+\hypertarget{gestiuxf3n-del-muxf3dulo-200}{%
+\section{Gestión del módulo 200}\label{gestiuxf3n-del-muxf3dulo-200}}
+
+\hypertarget{gestiuxf3n-del-muxf3dulo-300}{%
+\section{Gestión del módulo 300}\label{gestiuxf3n-del-muxf3dulo-300}}
+
+\hypertarget{gestiuxf3n-del-muxf3dulo-400}{%
+\section{Gestión del módulo 400}\label{gestiuxf3n-del-muxf3dulo-400}}
+
+\hypertarget{gestiuxf3n-del-muxf3dulo-500}{%
+\section{Gestión del módulo 500}\label{gestiuxf3n-del-muxf3dulo-500}}
+
+\hypertarget{integrando-muxf3dulos}{%
+\section{Integrando módulos}\label{integrando-muxf3dulos}}
+
+\hypertarget{anuxe1lisis-inferencial}{%
+\chapter{Análisis inferencial}\label{anuxe1lisis-inferencial}}
+
+\hypertarget{revisiuxf3n-del-modelos-de-regresiuxf3n}{%
+\section{Revisión del modelos de regresión}\label{revisiuxf3n-del-modelos-de-regresiuxf3n}}
 
 Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}. Like this one \footnote{This is a footnote.}.
 
-\hypertarget{citations}{%
-\section{Citations}\label{citations}}
+\hypertarget{principales-comandos-para-regresiones}{%
+\section{Principales comandos para regresiones}\label{principales-comandos-para-regresiones}}
 
 Reference items in your bibliography file(s) using \texttt{@key}.
 
@@ -336,11 +372,17 @@ Note that the \texttt{.bib} files need to be listed in the index.Rmd with the YA
 
 The RStudio Visual Markdown Editor can also make it easier to insert citations: \url{https://rstudio.github.io/visual-markdown-editing/\#/citations}
 
-\hypertarget{blocks}{%
-\chapter{Blocks}\label{blocks}}
+\hypertarget{inferencias-con-factores-de-expansiuxf3n}{%
+\section{Inferencias con factores de expansión}\label{inferencias-con-factores-de-expansiuxf3n}}
 
-\hypertarget{equations}{%
-\section{Equations}\label{equations}}
+\hypertarget{aplicaciuxf3n-con-encuestas}{%
+\section{Aplicación con encuestas}\label{aplicaciuxf3n-con-encuestas}}
+
+\hypertarget{gestiuxf3n-con-datos-de-panel-enaho}{%
+\chapter{Gestión con datos de panel ENAHO}\label{gestiuxf3n-con-datos-de-panel-enaho}}
+
+\hypertarget{aspectos-a-tener-en-cuenta}{%
+\section{Aspectos a tener en cuenta}\label{aspectos-a-tener-en-cuenta}}
 
 Here is an equation.
 
@@ -351,8 +393,8 @@ Here is an equation.
 
 You may refer to using \texttt{\textbackslash{}@ref(eq:binom)}, like see Equation \eqref{eq:binom}.
 
-\hypertarget{theorems-and-proofs}{%
-\section{Theorems and proofs}\label{theorems-and-proofs}}
+\hypertarget{comandos-para-panel-de-datos}{%
+\section{Comandos para panel de datos}\label{comandos-para-panel-de-datos}}
 
 Labeled theorems can be referenced in text using \texttt{\textbackslash{}@ref(thm:tri)}, for example, check out this smart theorem \ref{thm:tri}.
 
@@ -364,26 +406,26 @@ and \(a\) and \(b\) denote the lengths of the \textbf{other} two sides, we have
 
 Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}.
 
-\hypertarget{callout-blocks}{%
-\section{Callout blocks}\label{callout-blocks}}
+\hypertarget{aplicaciuxf3n-economuxe9trica}{%
+\section{Aplicación econométrica}\label{aplicaciuxf3n-economuxe9trica}}
 
 The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
 
-\hypertarget{sharing-your-book}{%
-\chapter{Sharing your book}\label{sharing-your-book}}
+\hypertarget{extra}{%
+\chapter{Extra}\label{extra}}
 
-\hypertarget{publishing}{%
-\section{Publishing}\label{publishing}}
+\hypertarget{uso-de-globals-y-locals}{%
+\section{Uso de globals y locals}\label{uso-de-globals-y-locals}}
 
 HTML books can be published online, see: \url{https://bookdown.org/yihui/bookdown/publishing.html}
 
-\hypertarget{pages}{%
-\section{404 pages}\label{pages}}
+\hypertarget{uso-de-comandos-forvalue-y-foreach}{%
+\section{Uso de comandos forvalue y foreach}\label{uso-de-comandos-forvalue-y-foreach}}
 
 By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a \texttt{\_404.Rmd} or \texttt{\_404.md} file to your project root and use code and/or Markdown syntax.
 
-\hypertarget{metadata-for-sharing}{%
-\section{Metadata for sharing}\label{metadata-for-sharing}}
+\hypertarget{almacenamiento-y-reporte-de-resultados}{%
+\section{Almacenamiento y reporte de resultados}\label{almacenamiento-y-reporte-de-resultados}}
 
 Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the \texttt{index.Rmd} YAML. To setup, set the \texttt{url} for your book and the path to your \texttt{cover-image} file. Your book's \texttt{title} and \texttt{description} are also used.
 
