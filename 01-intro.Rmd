@@ -66,18 +66,15 @@ Como acabamos de ver, el comando `codebook` nos muestra información muy importa
 
 ### Datos externos
 
-Stata puede importar sin ningún problema datos en formato .dta; para cuáles son las posibilidades que tenemos para importar archivos debemos escribir el comando `help import`. La ventana que muestra el Stata permite observar todos los formatos compatibles a importar, por lo que solo bastaría tener claridad de que tipo de formato queremos importar para acceder a la sintaxis y empezar a cargar nuestros datos. Aquí un ejemplo con los archivos excel.
+Stata puede importar sin ningún problema datos en formato .dta; para cuáles son las posibilidades que tenemos para importar archivos debemos escribir el comando `help import`. La ventana que muestra el Stata permite observar todos los formatos compatibles a importar, por lo que solo bastaría tener claridad de que tipo de formato queremos importar para acceder a la sintaxis y empezar a cargar nuestros datos. Aquí un ejemplo para importar archivos de formato excel.
 
 ```{stata, results='hide'}
-import excel "", firstrow sheet("Sheet1") clear
+import excel "ruta del archivo.xlsx", firstrow sheet("Sheet1") clear
 ```
 
-```{stata, echo=FALSE}
-sysuse auto, clear
-codebook make
-```
+En el término "ruta del archivo.xlsx" del código debemos ingresar la ruta en la cual tenemos nuestro archivo .xlsx que deseamos importar al Stata. Por su parte, la opción "firstrow" señala al Stata que la primera fila de nuestro archivo excel debe ser considerada como la lista de variables. Finalmente, "sheet()" es una opción para especificar la hoja del libro excel, lo que es sumamente importante cuando manejamos varias hojas dentro de un mismo libro. 
 
-#### Importar archivos excel
+Una vez importado el archivo, podemos iniciar nuestro análisis descriptivo que vimos en la sección anterior.
 
 ## Tipo de variables y formatos
 

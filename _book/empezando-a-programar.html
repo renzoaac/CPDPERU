@@ -340,28 +340,10 @@ make                                                             Make and Model
 </div>
 <div id="datos-externos" class="section level3 hasAnchor" number="3.1.2">
 <h3><span class="header-section-number">3.1.2</span> Datos externos<a href="empezando-a-programar.html#datos-externos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Stata puede importar sin ningún problema datos en formato .dta; para cuáles son las posibilidades que tenemos para importar archivos debemos escribir el comando <code>help import</code>. La ventana que muestra el Stata permite observar todos los formatos compatibles a importar, por lo que solo bastaría tener claridad de que tipo de formato queremos importar para acceder a la sintaxis y empezar a cargar nuestros datos. Aquí un ejemplo con los archivos excel.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb9-1"><a href="empezando-a-programar.html#cb9-1" tabindex="-1"></a>import excel <span class="st">&quot;&quot;</span>, firstrow sheet(<span class="st">&quot;Sheet1&quot;</span>) <span class="kw">clear</span></span></code></pre></div>
-<pre><code>(1978 Automobile Data)
-
-
--------------------------------------------------------------------------------
-make                                                             Make and Model
--------------------------------------------------------------------------------
-
-                  type:  string (str18), but longest is str17
-
-         unique values:  74                       missing &quot;&quot;:  0/74
-
-              examples:  &quot;Cad. Deville&quot;
-                         &quot;Dodge Magnum&quot;
-                         &quot;Merc. XR-7&quot;
-                         &quot;Pont. Catalina&quot;
-
-               warning:  variable has embedded blanks</code></pre>
-<div id="importar-archivos-excel" class="section level4 hasAnchor" number="3.1.2.1">
-<h4><span class="header-section-number">3.1.2.1</span> Importar archivos excel<a href="empezando-a-programar.html#importar-archivos-excel" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-</div>
+<p>Stata puede importar sin ningún problema datos en formato .dta; para cuáles son las posibilidades que tenemos para importar archivos debemos escribir el comando <code>help import</code>. La ventana que muestra el Stata permite observar todos los formatos compatibles a importar, por lo que solo bastaría tener claridad de que tipo de formato queremos importar para acceder a la sintaxis y empezar a cargar nuestros datos. Aquí un ejemplo para importar archivos de formato excel.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb9-1"><a href="empezando-a-programar.html#cb9-1" tabindex="-1"></a>import excel <span class="st">&quot;ruta del archivo.xlsx&quot;</span>, firstrow sheet(<span class="st">&quot;Sheet1&quot;</span>) <span class="kw">clear</span></span></code></pre></div>
+<p>En el término “ruta del archivo.xlsx” del código debemos ingresar la ruta en la cual tenemos nuestro archivo .xlsx que deseamos importar al Stata. Por su parte, la opción “firstrow” señala al Stata que la primera fila de nuestro archivo excel debe ser considerada como la lista de variables. Finalmente, “sheet()” es una opción para especificar la hoja del libro excel, lo que es sumamente importante cuando manejamos varias hojas dentro de un mismo libro.</p>
+<p>Una vez importado el archivo, podemos iniciar nuestro análisis descriptivo que vimos en la sección anterior.</p>
 </div>
 </div>
 <div id="tipo-de-variables-y-formatos" class="section level2 hasAnchor" number="3.2">
