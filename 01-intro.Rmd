@@ -72,7 +72,7 @@ Stata puede importar sin ningún problema datos en formato .dta; para cuáles so
 import excel "ruta del archivo.xlsx", firstrow sheet("Sheet1") clear
 ```
 
-En el término "ruta del archivo.xlsx" del código debemos ingresar la ruta en la cual tenemos nuestro archivo .xlsx que deseamos importar al Stata. Por su parte, la opción "firstrow" señala al Stata que la primera fila de nuestro archivo excel debe ser considerada como la lista de variables. Finalmente, "sheet()" es una opción para especificar la hoja del libro excel, lo que es sumamente importante cuando manejamos varias hojas dentro de un mismo libro. 
+En el término "ruta del archivo.xlsx" del código debemos ingresar la ruta en la cual tenemos nuestro archivo .xlsx que deseamos importar al Stata. Por su parte, la opción "firstrow" señala al Stata que la primera fila de nuestro archivo excel debe ser considerada como la lista de variables. Finalmente, "sheet()" es una opción para especificar la hoja del libro excel, lo que es sumamente importante cuando manejamos varias hojas dentro de un mismo libro.
 
 Una vez importado el archivo, podemos iniciar nuestro análisis descriptivo que vimos en la sección anterior.
 
@@ -82,10 +82,15 @@ Profundicemos un poco sobre las variables y formatos ya que son parte fundamenta
 
 ### Tipos de almacenamiento
 
-Las variables numéricas y se almacenará en la memoria a través de diferentes tipologías. Comenzando por las variables numéricas tenemos los siguientes tipos de almacenamiento: byte, int, long, float y double.
+Las variables numéricas y textos se almacenarán en la memoria a través de diferentes tipologías. Comenzando por las variables numéricas tenemos los siguientes tipos de almacenamiento: byte, int, long, float y double.
 
 Cada tipología esta directamente relacionado con su tamaño de almacenamiento en términos de "bytes". Así, una variable númerica de tipo "byte" tendrá un peso de 1 "bytes" en la memoria, de modo que este tipo de variable estará usualmente asociada con números de hasta 3 caracteres. 
 
-Al escribir el comando `help Data types` podemos observar todas las tipologías tanto para las variables numéricas y texto, las cuales siguen la misma lógica del párrafo anterior.
+Podemos obtener ayuda del Stata para conocer las distintas tipologías de variables que se manejan. Así, al escribir el comando `help Data types` podemos observar todas las tipologías tanto para las variables numéricas y texto, las cuales siguen la misma lógica del párrafo anterior.
 
-## Principales comandos
+En cuanto a los formatos, estos son aplicables a las variables numéricas y nos permitirán generar una visualización personalizada de dichas variables. La manera de acceder a toda la caja de formatos será escribiendo el siguiente comando: `help format`.
+
+Es importante señalar que para Stata no es imprescindible que especifiquemos el tipo de almacenamiento y los formatos ya que el Stata establece las establece por defecto. De hecho, podemos gestionar las variables de un dataset sin siquiera colocar alguna línea referida al tipo de almacenamiento y su formato. Por ejemplo, al utilizar el comando `generate edad = 10` estamos creando una nueva variable para un determinado dataset, esta variable tomará el nombre de "edad" y tendrá como valores el número 10. En este caso, no estamos señalandole al Stata explícitamente el tipo de almacenamiento que tendrá esta variable y aún así Stata lo creará. Ahora bien, si revisamos a través del comando `codebook edad` nos mostrará que el tipo de almacenamiento definido por defecto por el Stata es "float". Sin embargo, por los valores que aborda esta variable "edad" es totalmente factible que la variable sea de tipo "byte" en lugar de "float", de manera tal que podemos ahorrarnos algunos bytes en la memoria sin perjudicar la calidad de los datos.
+
+
+

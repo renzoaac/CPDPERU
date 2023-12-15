@@ -23,7 +23,7 @@
 <meta name="author" content="Renzo Álvarez Carcheri" />
 
 
-<meta name="date" content="2023-12-14" />
+<meta name="date" content="2023-12-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -185,7 +185,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#tipos-de-almacenamiento"><i class="fa fa-check"></i><b>3.2.1</b> Tipos de almacenamiento</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="empezando-a-programar.html"><a href="empezando-a-programar.html#principales-comandos"><i class="fa fa-check"></i><b>3.3</b> Principales comandos</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>4</b> Explorando la ENAHO</a>
 <ul>
@@ -351,14 +350,13 @@ make                                                             Make and Model
 <p>Profundicemos un poco sobre las variables y formatos ya que son parte fundamental en la gestión de datos. Afortunadamente, en Stata trabajaremos con solo variables de clase númerica y texto por lo que no será muy complejo abordar esta sección.</p>
 <div id="tipos-de-almacenamiento" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Tipos de almacenamiento<a href="empezando-a-programar.html#tipos-de-almacenamiento" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Las variables numéricas y se almacenará en la memoria a través de diferentes tipologías. Comenzando por las variables numéricas tenemos los siguientes tipos de almacenamiento: byte, int, long, float y double.</p>
+<p>Las variables numéricas y textos se almacenarán en la memoria a través de diferentes tipologías. Comenzando por las variables numéricas tenemos los siguientes tipos de almacenamiento: byte, int, long, float y double.</p>
 <p>Cada tipología esta directamente relacionado con su tamaño de almacenamiento en términos de “bytes”. Así, una variable númerica de tipo “byte” tendrá un peso de 1 “bytes” en la memoria, de modo que este tipo de variable estará usualmente asociada con números de hasta 3 caracteres.</p>
-<p>Al escribir el comando <code>help Data types</code> podemos observar todas las tipologías tanto para las variables numéricas y texto, las cuales siguen la misma lógica del párrafo anterior.</p>
-</div>
-</div>
-<div id="principales-comandos" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Principales comandos<a href="empezando-a-programar.html#principales-comandos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Podemos obtener ayuda del Stata para conocer las distintas tipologías de variables que se manejan. Así, al escribir el comando <code>help Data types</code> podemos observar todas las tipologías tanto para las variables numéricas y texto, las cuales siguen la misma lógica del párrafo anterior.</p>
+<p>En cuanto a los formatos, estos son aplicables a las variables numéricas y nos permitirán generar una visualización personalizada de dichas variables. La manera de acceder a toda la caja de formatos será escribiendo el siguiente comando: <code>help format</code>.</p>
+<p>Es importante señalar que para Stata no es imprescindible que especifiquemos el tipo de almacenamiento y los formatos ya que el Stata establece las establece por defecto. De hecho, podemos gestionar las variables de un dataset sin siquiera colocar alguna línea referida al tipo de almacenamiento y su formato. Por ejemplo, al utilizar el comando <code>generate edad = 10</code> estamos creando una nueva variable para un determinado dataset, esta variable tomará el nombre de “edad” y tendrá como valores el número 10. En este caso, no estamos señalandole al Stata explícitamente el tipo de almacenamiento que tendrá esta variable y aún así Stata lo creará. Ahora bien, si revisamos a través del comando <code>codebook edad</code> nos mostrará que el tipo de almacenamiento definido por defecto por el Stata es “float”. Sin embargo, por los valores que aborda esta variable “edad” es totalmente factible que la variable sea de tipo “byte” en lugar de “float”, de manera tal que podemos ahorrarnos algunos bytes en la memoria sin perjudicar la calidad de los datos.</p>
 
+</div>
 </div>
 </div>
             </section>
