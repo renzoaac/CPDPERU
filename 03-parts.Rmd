@@ -13,12 +13,14 @@ Add an appendix as a special kind of un-numbered part: `# (APPENDIX) Other stuff
 El módulo 100 corresponde al módulo de las "Características de la Vivienda y del Hogar" por lo que inmediatamente iniciamos la programación pidiendo que nos describa las variables alojadas en dicha encuesta.
 
 ```{stata, results='hide'}
-codebook make
+cd "ruta del archivo"
+use enaho01-2022-100, clear
 ```
 
 ```{stata, echo=FALSE}
-sysuse auto, clear
-codebook make
+cd "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\renzo\asesorías\Noemy\data"
+use enaho01-2022-100, clear
+codebook conglome vivienda hogar
 ```
 
 

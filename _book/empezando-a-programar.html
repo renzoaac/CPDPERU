@@ -23,7 +23,7 @@
 <meta name="author" content="Renzo Álvarez Carcheri" />
 
 
-<meta name="date" content="2023-12-15" />
+<meta name="date" content="2023-12-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -162,7 +162,7 @@ div.csl-indent {
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usos"><i class="fa fa-check"></i><b>1.1</b> Usos</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#instalación"><i class="fa fa-check"></i><b>1.2</b> Instalación</a></li>
@@ -249,8 +249,8 @@ div.csl-indent {
 <div id="datos-internos" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Datos internos<a href="empezando-a-programar.html#datos-internos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para este ejemplo, usaremos el conjunto de datos interno “auto” seguido de la opción <code>clear</code> ya que nos permite limpiar la memoria de cualquier otro dataset usado previamente. Seguido de ello, usaremos el comando <code>describe</code> para que Stata nos brinde una descripción general de dicho dataset.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb1-1"><a href="empezando-a-programar.html#cb1-1" tabindex="-1"></a><span class="kw">sysuse</span> auto, <span class="kw">clear</span></span>
-<span id="cb1-2"><a href="empezando-a-programar.html#cb1-2" tabindex="-1"></a><span class="kw">describe</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb3-1"><a href="empezando-a-programar.html#cb3-1" tabindex="-1"></a><span class="kw">sysuse</span> auto, <span class="kw">clear</span></span>
+<span id="cb3-2"><a href="empezando-a-programar.html#cb3-2" tabindex="-1"></a><span class="kw">describe</span></span></code></pre></div>
 <pre><code>(1978 Automobile Data)
 
 
@@ -279,7 +279,7 @@ foreign         byte    %8.0g      origin     Car type
 Sorted by: foreign</code></pre>
 <p>Inmediatamente Stata nos informa que la data esta relacionada con datos asociados a automóviles del año 1978, la cual exhibe 74 observaciones con 12 variables que, al hacer una lectura rápida de la columna de etiquetas de la variable (variable label), están vinculadas a las características físicas de los vehículos tales como: el peso (weight) y el largo (length), así como el espacio de la maletera (trunk) y el espacio libre (headroom). Asimismo, existen variables asociadas al precio (price), millas recorridas por galón (mpg), entre otras. Finalmente, es importante resaltar que de las 12 variables, 11 de ellas son de tipo numérico y solo 1 de tipo texto o cadena.</p>
 <p>Para seguir conociendo este dataset, ahora usaremos el comando <code>summarize</code> con la finalidad de que Stata nos muestre los principales estadísticos descriptivos de la data.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb3-1"><a href="empezando-a-programar.html#cb3-1" tabindex="-1"></a><span class="kw">summarize</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb5-1"><a href="empezando-a-programar.html#cb5-1" tabindex="-1"></a><span class="kw">summarize</span></span></code></pre></div>
 <pre><code>(1978 Automobile Data)
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
@@ -299,7 +299,7 @@ displacement |         74    197.2973    91.83722         79        425
   gear_ratio |         74    3.014865    .4562871       2.19       3.89
      foreign |         74    .2972973    .4601885          0          1</code></pre>
 <p>La tabla nos muestra estadísticos descriptivos básicos como la media, desviación estándar y los valores mínimos y máximos. Como se observa, estos estadísticos son aplicables solo a variables numéricas, por esa razón el contenido de la tabla para la variable marca (make) esta vacía. Asimismo, podemos utilizar la opción del comando <code>summarize</code> denominado <code>detail</code> para obtener información estadística adicional como la varianza, el sesgo y la kurtosis, así como una serie de percentiles que nos permitirán realizar un análisis descriptivo más detallado. Empleemos este comando con la variable precio (price):</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb5-1"><a href="empezando-a-programar.html#cb5-1" tabindex="-1"></a><span class="kw">summarize</span> price, <span class="kw">detail</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb7-1"><a href="empezando-a-programar.html#cb7-1" tabindex="-1"></a><span class="kw">summarize</span> price, <span class="kw">detail</span></span></code></pre></div>
 <pre><code>(1978 Automobile Data)
 
                             Price
@@ -317,7 +317,7 @@ displacement |         74    197.2973    91.83722         79        425
 95%        13466          14500       Skewness       1.653434
 99%        15906          15906       Kurtosis       4.819188</code></pre>
 <p>Otro comando que usaremos frecuentemente es el comando <code>codebook</code> ya que nos permitirá obtener información complementaria a la antes vista, esta vez sin importar si la variable es número o texto. Utilicemos este comando para la variable de tipo texto llamada marca (make).</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb7-1"><a href="empezando-a-programar.html#cb7-1" tabindex="-1"></a><span class="kw">codebook</span> make</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb9-1"><a href="empezando-a-programar.html#cb9-1" tabindex="-1"></a><span class="kw">codebook</span> make</span></code></pre></div>
 <pre><code>(1978 Automobile Data)
 
 
@@ -340,7 +340,7 @@ make                                                             Make and Model
 <div id="datos-externos" class="section level3 hasAnchor" number="3.1.2">
 <h3><span class="header-section-number">3.1.2</span> Datos externos<a href="empezando-a-programar.html#datos-externos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Stata puede importar sin ningún problema datos en formato .dta; para cuáles son las posibilidades que tenemos para importar archivos debemos escribir el comando <code>help import</code>. La ventana que muestra el Stata permite observar todos los formatos compatibles a importar, por lo que solo bastaría tener claridad de que tipo de formato queremos importar para acceder a la sintaxis y empezar a cargar nuestros datos. Aquí un ejemplo para importar archivos de formato excel.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb9-1"><a href="empezando-a-programar.html#cb9-1" tabindex="-1"></a>import excel <span class="st">&quot;ruta del archivo.xlsx&quot;</span>, firstrow sheet(<span class="st">&quot;Sheet1&quot;</span>) <span class="kw">clear</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb11-1"><a href="empezando-a-programar.html#cb11-1" tabindex="-1"></a>import excel <span class="st">&quot;ruta del archivo.xlsx&quot;</span>, firstrow sheet(<span class="st">&quot;Sheet1&quot;</span>) <span class="kw">clear</span></span></code></pre></div>
 <p>En el término “ruta del archivo.xlsx” del código debemos ingresar la ruta en la cual tenemos nuestro archivo .xlsx que deseamos importar al Stata. Por su parte, la opción “firstrow” señala al Stata que la primera fila de nuestro archivo excel debe ser considerada como la lista de variables. Finalmente, “sheet()” es una opción para especificar la hoja del libro excel, lo que es sumamente importante cuando manejamos varias hojas dentro de un mismo libro.</p>
 <p>Una vez importado el archivo, podemos iniciar nuestro análisis descriptivo que vimos en la sección anterior.</p>
 </div>
@@ -419,6 +419,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
