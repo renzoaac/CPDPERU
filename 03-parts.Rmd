@@ -10,6 +10,18 @@ Add an appendix as a special kind of un-numbered part: `# (APPENDIX) Other stuff
 
 ## Gestión del módulo 100
 
+El módulo 100 corresponde al módulo de las "Características de la Vivienda y del Hogar" por lo que inmediatamente iniciamos la programación pidiendo que nos describa las variables alojadas en dicha encuesta.
+
+```{stata, results='hide'}
+codebook make
+```
+
+```{stata, echo=FALSE}
+sysuse auto, clear
+codebook make
+```
+
+
 ## Gestión del módulo 200
 
 ## Gestión del módulo 300
