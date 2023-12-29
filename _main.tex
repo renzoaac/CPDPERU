@@ -577,6 +577,17 @@ hogar                                               numero secuencial del hogar
                          "11"
 \end{verbatim}
 
+Como observamos, los tres identificadores están presentes para las 44,122 observaciones lo que sugiere que todos los individuos se encuentran identificados. Asimismo, existen 5,359 valores únicos de conglomerados; esto nos indica que los 44,122 individuos han sido seleccionados de tal modo que pertecen a alguno de los 5,359 conglomerados, 649 viviendas de la muestra y número secuencial del hogar.
+
+En tal sentido, las variables ``conglome'', ``vivienda'' y ``hogar'' serán una suerte de ``documento de identidad'' que nos permitirá individualizar a las viviendas de la encuesta. La función \texttt{group()} del comando \texttt{egen} nos permitirá generar una variable para identificar fácilmente a estas viviendas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{egen}\NormalTok{ id = }\FunctionTok{group}\NormalTok{(conglome vivienda hogar)}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{gestiuxf3n-del-muxf3dulo-200}{%
 \section{Gestión del módulo 200}\label{gestiuxf3n-del-muxf3dulo-200}}
 
