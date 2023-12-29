@@ -59,6 +59,14 @@ egen id = group(conglome vivienda hogar)
 count if id
 ```
 
+Se muestra que la variable "id" abarca a todas las viviendas y que además, por el comando `isid`, todos los valores de esta variable son únicos. Por lo tanto, cumple con el objetivo de identificar a todas las viviendas de la muestra.
+
+Ahora bien, imaginemos que deseamos enfocarnos solo en información asociada a las características de las viviendas de la muestra, en particular, de los servicios que posee tales: el agua, la luz y el internet, así como el material predominante de dicha vivienda.
+
+Así, inspeccionamos la data con los clásicos comandos de `describe` y `sumarize` para localizar las variables de interés, dando como resultado que las variables relevantes son:
+
+
+
 ## Gestión del módulo 200
 
 ## Gestión del módulo 300

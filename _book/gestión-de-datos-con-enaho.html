@@ -264,10 +264,7 @@ vivienda        str3    %3s                   numero de seleccion de vivienda
 hogar           str2    %2s                   numero secuencial del hogar</code></pre>
 <p>El resultado anterior nos muestra que las variables identificadoras son de tipo texto, de 2 a 6 caracteres, que refieren al número de conglomerado, número de selección de la vivienda y número secuencial del hogar. Finalmente, empleados un <code>codebook</code> para observar lo valores únicos y los missings values.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb17-1"><a href="gestión-de-datos-con-enaho.html#cb17-1" tabindex="-1"></a><span class="kw">codebook</span> conglome vivienda hogar</span></code></pre></div>
-<pre><code>&gt; torio\renzo\asesorías\Noemy\data&quot;
-D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
-&gt; renzo\asesorías\Noemy\data
-
+<pre><code>&gt; itorio\renzo\asesorías\Noemy\data\enaho01-2022-100.dta&quot;, clear
 
 
 -------------------------------------------------------------------------------
@@ -313,10 +310,7 @@ hogar                                               numero secuencial del hogar
 <div class="sourceCode" id="cb19"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb19-1"><a href="gestión-de-datos-con-enaho.html#cb19-1" tabindex="-1"></a><span class="kw">egen</span> id = <span class="fu">group</span>(conglome vivienda hogar)</span></code></pre></div>
 <p>Luego, corroboramos que esta variable se encuentre dispersa en toda la muestra y que, además, sean valores únicos, por lo que usaremos las funciones <code>count</code>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb20-1"><a href="gestión-de-datos-con-enaho.html#cb20-1" tabindex="-1"></a><span class="fu">count</span> <span class="kw">if</span> id</span></code></pre></div>
-<pre><code>&gt; torio\renzo\asesorías\Noemy\data&quot;
-D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
-&gt; renzo\asesorías\Noemy\data
-
+<pre><code>&gt; itorio\renzo\asesorías\Noemy\data\enaho01-2022-100.dta&quot;, clear
 
 
   44,122</code></pre>
