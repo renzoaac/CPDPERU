@@ -577,16 +577,47 @@ hogar                                               numero secuencial del hogar
                          "11"
 \end{verbatim}
 
-Como observamos, los tres identificadores están presentes para las 44,122 observaciones lo que sugiere que todos los individuos se encuentran identificados. Asimismo, existen 5,359 valores únicos de conglomerados; esto nos indica que los 44,122 individuos han sido seleccionados de tal modo que pertecen a alguno de los 5,359 conglomerados, 649 viviendas de la muestra y número secuencial del hogar.
+Como observamos, los tres identificadores están presentes para las 44,122 observaciones lo que sugiere que todos las viviendas se encuentran identificadas. Asimismo, existen 5,359 valores únicos de conglomerados; esto nos indica que las 44,122 viviendas de la muestra han sido seleccionadas de tal modo que pertecen a alguno de los 5,359 conglomerados, 649 viviendas y cuentan con algún número secuencial del hogar asignado.
 
-En tal sentido, las variables ``conglome'', ``vivienda'' y ``hogar'' serán una suerte de ``documento de identidad'' que nos permitirá individualizar a las viviendas de la encuesta. La función \texttt{group()} del comando \texttt{egen} nos permitirá generar una variable para identificar fácilmente a estas viviendas.
+En tal sentido, las variables ``conglome'', ``vivienda'' y ``hogar'' serán una suerte de ``documento de identidad'' que nos permitirá individualizar a las viviendas. Con la finalidad de efectuar esto último, usamos la función \texttt{group()} del comando \texttt{egen}, en la que crearemos una variable denominada ``id''.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
+\NormalTok{cd }\StringTok{"D:\textbackslash{}OneDrive {-} Superintendencia Nacional de Servicios de Saneamiento\textbackslash{}Escritorio}\CharTok{\textbackslash{}r}\StringTok{enzo}\CharTok{\textbackslash{}a}\StringTok{sesorías\textbackslash{}Noemy\textbackslash{}data"}
+\KeywordTok{use}\NormalTok{ enaho01{-}2022{-}100, }\KeywordTok{clear}
 \KeywordTok{egen}\NormalTok{ id = }\FunctionTok{group}\NormalTok{(conglome vivienda hogar)}
 \end{Highlighting}
 \end{Shaded}
+
+Luego, corroboramos que esta variable se encuentre dispersa en toda la muestra y que, además, sean valores únicos, por lo que usaremos las funciones \texttt{count} y \texttt{isid}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{count} \KeywordTok{if}\NormalTok{ id}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+> torio\renzo\asesorías\Noemy\data"
+D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
+> renzo\asesorías\Noemy\data
+
+
+
+  44,122
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{isid}\NormalTok{ id}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+> torio\renzo\asesorías\Noemy\data"
+D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
+> renzo\asesorías\Noemy\data
+\end{verbatim}
 
 \hypertarget{gestiuxf3n-del-muxf3dulo-200}{%
 \section{Gestión del módulo 200}\label{gestiuxf3n-del-muxf3dulo-200}}
