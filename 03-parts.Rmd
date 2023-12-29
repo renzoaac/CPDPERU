@@ -63,9 +63,16 @@ Se muestra que la variable "id" abarca a todas las viviendas y que además, por 
 
 Ahora bien, imaginemos que deseamos enfocarnos solo en información asociada a las características de las viviendas de la muestra, en particular, de los servicios que posee tales: el agua, la luz y el internet, así como el material predominante de dicha vivienda.
 
-Así, inspeccionamos la data con los clásicos comandos de `describe` y `sumarize` para localizar las variables de interés, dando como resultado que las variables relevantes son:
+Así, inspeccionamos la data con los clásicos comandos de `describe` para localizar las variables de interés, dando como resultado que las variables relevantes son:
 
+```{stata, results='hide'}
+describe p110 p111a p1121
+```
 
+```{stata, echo=FALSE}
+use "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\renzo\asesorías\Noemy\data\enaho01-2022-100.dta", clear
+describe p110 p111a p1121
+```
 
 ## Gestión del módulo 200
 
