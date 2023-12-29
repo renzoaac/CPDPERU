@@ -24,8 +24,7 @@ describe conglome vivienda hogar
 ```
 
 ```{stata, echo=FALSE}
-cd "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\renzo\asesorías\Noemy\data"
-use enaho01-2022-100, clear
+use "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\renzo\asesorías\Noemy\data\enaho01-2022-100.dta", clear
 describe conglome vivienda hogar
 ```
 
@@ -36,8 +35,7 @@ codebook conglome vivienda hogar
 ```
 
 ```{stata, echo=FALSE}
-cd "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\renzo\asesorías\Noemy\data"
-use enaho01-2022-100, clear
+use "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\renzo\asesorías\Noemy\data\enaho01-2022-100.dta", clear
 codebook conglome vivienda hogar
 ```
 
@@ -56,8 +54,7 @@ count if id
 ```
 
 ```{stata, echo=FALSE}
-cd "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\renzo\asesorías\Noemy\data"
-use enaho01-2022-100, clear
+use "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\renzo\asesorías\Noemy\data\enaho01-2022-100.dta", clear
 egen id = group(conglome vivienda hogar)
 count if id
 ```

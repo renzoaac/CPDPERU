@@ -510,9 +510,7 @@ Ahora bien, empezaremos con las variables identificadoras; estas son las variabl
 \end{Shaded}
 
 \begin{verbatim}
-> torio\renzo\asesorías\Noemy\data"
-D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
-> renzo\asesorías\Noemy\data
+> itorio\renzo\asesorías\Noemy\data\enaho01-2022-100.dta", clear
 
               storage   display    value
 variable name   type    format     label      variable label
@@ -583,6 +581,14 @@ En tal sentido, las variables ``conglome'', ``vivienda'' y ``hogar'' serán una 
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\KeywordTok{egen}\NormalTok{ id = }\FunctionTok{group}\NormalTok{(conglome vivienda hogar)}
+\end{Highlighting}
+\end{Shaded}
+
+Luego, corroboramos que esta variable se encuentre dispersa en toda la muestra y que, además, sean valores únicos, por lo que usaremos las funciones \texttt{count}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{count} \KeywordTok{if}\NormalTok{ id}
 \end{Highlighting}
 \end{Shaded}
@@ -591,20 +597,10 @@ En tal sentido, las variables ``conglome'', ``vivienda'' y ``hogar'' serán una 
 > torio\renzo\asesorías\Noemy\data"
 D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
 > renzo\asesorías\Noemy\data
-\end{verbatim}
 
-Luego, corroboramos que esta variable se encuentre dispersa en toda la muestra y que, además, sean valores únicos, por lo que usaremos las funciones \texttt{count} y \texttt{isid}:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{isid}\NormalTok{ id}
-\end{Highlighting}
-\end{Shaded}
 
-\begin{verbatim}
-> torio\renzo\asesorías\Noemy\data"
-D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
-> renzo\asesorías\Noemy\data
+  44,122
 \end{verbatim}
 
 \hypertarget{gestiuxf3n-del-muxf3dulo-200}{%
