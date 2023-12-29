@@ -31,7 +31,3 @@ gestión-con-datos-de-panel-enaho
 aspectos-a-tener-en-cuenta
 comandos-para-panel-de-datos
 aplicación-econométrica
-extra
-uso-de-globals-y-locals
-uso-de-comandos-forvalue-y-foreach
-almacenamiento-y-reporte-de-resultados
