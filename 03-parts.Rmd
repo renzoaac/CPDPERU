@@ -10,11 +10,29 @@ Add an appendix as a special kind of un-numbered part: `# (APPENDIX) Other stuff
 
 ## Gestión del módulo 100
 
-El módulo 100 corresponde al módulo de las "Características de la Vivienda y del Hogar" por lo que inmediatamente iniciamos la programación pidiendo que nos describa las variables alojadas en dicha encuesta.
+El módulo 100 corresponde al módulo de las "Características de la Vivienda y del Hogar" por lo que inmediatamente iniciamos la programación abriendo el archivo formato .dta denominado "enaho01-2022-100".
 
 ```{stata, results='hide'}
 cd "ruta del archivo"
 use enaho01-2022-100, clear
+```
+
+Ahora bien, empezaremos con las variables identificadoras; estas son las variables conglome, vivienda y hogar las cuales describiremos a continuación:
+
+```{stata, results='hide'}
+describe conglome vivienda hogar
+```
+
+```{stata, echo=FALSE}
+cd "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\renzo\asesorías\Noemy\data"
+use enaho01-2022-100, clear
+describe conglome vivienda hogar
+```
+
+El resultado anterior nos muestra que las variables identificadoras son de tipo texto, de 2 a 6 caracteres, que refieren al número de conglomerado, número de selección de la vivienda y número secuencial del hogar. Finalmente, empleados un `codebook` para observar lo valores únicos y los missings values.
+
+```{stata, results='hide'}
+codebook conglome vivienda hogar
 ```
 
 ```{stata, echo=FALSE}
@@ -22,7 +40,6 @@ cd "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritor
 use enaho01-2022-100, clear
 codebook conglome vivienda hogar
 ```
-
 
 ## Gestión del módulo 200
 

@@ -492,32 +492,89 @@ Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ O
 \hypertarget{gestiuxf3n-del-muxf3dulo-100}{%
 \section{Gestión del módulo 100}\label{gestiuxf3n-del-muxf3dulo-100}}
 
-El módulo 100 corresponde al módulo de las ``Características de la Vivienda y del Hogar'' por lo que inmediatamente iniciamos la programación pidiendo que nos describa las variables alojadas en dicha encuesta.
+El módulo 100 corresponde al módulo de las ``Características de la Vivienda y del Hogar'' por lo que inmediatamente iniciamos la programación abriendo el archivo formato .dta denominado ``enaho01-2022-100''.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{codebook}\NormalTok{ make}
+\NormalTok{cd }\StringTok{"ruta del archivo"}
+\KeywordTok{use}\NormalTok{ enaho01{-}2022{-}100, }\KeywordTok{clear}
+\end{Highlighting}
+\end{Shaded}
+
+Ahora bien, empezaremos con las variables identificadoras; estas son las variables conglome, vivienda y hogar las cuales describiremos a continuación:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{describe}\NormalTok{ conglome vivienda hogar}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-(1978 Automobile Data)
+> torio\renzo\asesorías\Noemy\data"
+D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
+> renzo\asesorías\Noemy\data
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+conglome        str6    %6s                   numero de conglomerado
+vivienda        str3    %3s                   numero de seleccion de vivienda
+hogar           str2    %2s                   numero secuencial del hogar
+\end{verbatim}
+
+El resultado anterior nos muestra que las variables identificadoras son de tipo texto, de 2 a 6 caracteres, que refieren al número de conglomerado, número de selección de la vivienda y número secuencial del hogar. Finalmente, empleados un \texttt{codebook} para observar lo valores únicos y los missings values.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{codebook}\NormalTok{ conglome vivienda hogar}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+> torio\renzo\asesorías\Noemy\data"
+D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
+> renzo\asesorías\Noemy\data
+
 
 
 -------------------------------------------------------------------------------
-make                                                             Make and Model
+conglome                                                 numero de conglomerado
 -------------------------------------------------------------------------------
 
-                  type:  string (str18), but longest is str17
+                  type:  string (str6)
 
-         unique values:  74                       missing "":  0/74
+         unique values:  5,359                    missing "":  0/44,122
 
-              examples:  "Cad. Deville"
-                         "Dodge Magnum"
-                         "Merc. XR-7"
-                         "Pont. Catalina"
+              examples:  "015258"
+                         "016496"
+                         "017790"
+                         "019115"
 
-               warning:  variable has embedded blanks
+-------------------------------------------------------------------------------
+vivienda                                        numero de seleccion de vivienda
+-------------------------------------------------------------------------------
+
+                  type:  string (str3)
+
+         unique values:  649                      missing "":  0/44,122
+
+              examples:  "024"
+                         "052"
+                         "081"
+                         "120"
+
+-------------------------------------------------------------------------------
+hogar                                               numero secuencial del hogar
+-------------------------------------------------------------------------------
+
+                  type:  string (str2)
+
+         unique values:  15                       missing "":  0/44,122
+
+              examples:  "11"
+                         "11"
+                         "11"
+                         "11"
 \end{verbatim}
 
 \hypertarget{gestiuxf3n-del-muxf3dulo-200}{%

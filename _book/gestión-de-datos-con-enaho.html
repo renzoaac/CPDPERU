@@ -249,25 +249,67 @@ div.csl-indent {
 <p>Add an appendix as a special kind of un-numbered part: <code># (APPENDIX) Other stuff {-}</code> (followed by <code># A chapter</code>). Chapters in an appendix are prepended with letters instead of numbers.</p>
 <div id="gestión-del-módulo-100" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Gestión del módulo 100<a href="gestión-de-datos-con-enaho.html#gestión-del-módulo-100" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>El módulo 100 corresponde al módulo de las “Características de la Vivienda y del Hogar” por lo que inmediatamente iniciamos la programación pidiendo que nos describa las variables alojadas en dicha encuesta.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb14-1"><a href="gestión-de-datos-con-enaho.html#cb14-1" tabindex="-1"></a><span class="kw">codebook</span> make</span></code></pre></div>
-<pre><code>(1978 Automobile Data)
+<p>El módulo 100 corresponde al módulo de las “Características de la Vivienda y del Hogar” por lo que inmediatamente iniciamos la programación abriendo el archivo formato .dta denominado “enaho01-2022-100”.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb14-1"><a href="gestión-de-datos-con-enaho.html#cb14-1" tabindex="-1"></a>cd <span class="st">&quot;ruta del archivo&quot;</span></span>
+<span id="cb14-2"><a href="gestión-de-datos-con-enaho.html#cb14-2" tabindex="-1"></a><span class="kw">use</span> enaho01-2022-100, <span class="kw">clear</span></span></code></pre></div>
+<p>Ahora bien, empezaremos con las variables identificadoras; estas son las variables conglome, vivienda y hogar las cuales describiremos a continuación:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb15-1"><a href="gestión-de-datos-con-enaho.html#cb15-1" tabindex="-1"></a><span class="kw">describe</span> conglome vivienda hogar</span></code></pre></div>
+<pre><code>&gt; torio\renzo\asesorías\Noemy\data&quot;
+D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
+&gt; renzo\asesorías\Noemy\data
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+conglome        str6    %6s                   numero de conglomerado
+vivienda        str3    %3s                   numero de seleccion de vivienda
+hogar           str2    %2s                   numero secuencial del hogar</code></pre>
+<p>El resultado anterior nos muestra que las variables identificadoras son de tipo texto, de 2 a 6 caracteres, que refieren al número de conglomerado, número de selección de la vivienda y número secuencial del hogar. Finalmente, empleados un <code>codebook</code> para observar lo valores únicos y los missings values.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb17-1"><a href="gestión-de-datos-con-enaho.html#cb17-1" tabindex="-1"></a><span class="kw">codebook</span> conglome vivienda hogar</span></code></pre></div>
+<pre><code>&gt; torio\renzo\asesorías\Noemy\data&quot;
+D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
+&gt; renzo\asesorías\Noemy\data
+
 
 
 -------------------------------------------------------------------------------
-make                                                             Make and Model
+conglome                                                 numero de conglomerado
 -------------------------------------------------------------------------------
 
-                  type:  string (str18), but longest is str17
+                  type:  string (str6)
 
-         unique values:  74                       missing &quot;&quot;:  0/74
+         unique values:  5,359                    missing &quot;&quot;:  0/44,122
 
-              examples:  &quot;Cad. Deville&quot;
-                         &quot;Dodge Magnum&quot;
-                         &quot;Merc. XR-7&quot;
-                         &quot;Pont. Catalina&quot;
+              examples:  &quot;015258&quot;
+                         &quot;016496&quot;
+                         &quot;017790&quot;
+                         &quot;019115&quot;
 
-               warning:  variable has embedded blanks</code></pre>
+-------------------------------------------------------------------------------
+vivienda                                        numero de seleccion de vivienda
+-------------------------------------------------------------------------------
+
+                  type:  string (str3)
+
+         unique values:  649                      missing &quot;&quot;:  0/44,122
+
+              examples:  &quot;024&quot;
+                         &quot;052&quot;
+                         &quot;081&quot;
+                         &quot;120&quot;
+
+-------------------------------------------------------------------------------
+hogar                                               numero secuencial del hogar
+-------------------------------------------------------------------------------
+
+                  type:  string (str2)
+
+         unique values:  15                       missing &quot;&quot;:  0/44,122
+
+              examples:  &quot;11&quot;
+                         &quot;11&quot;
+                         &quot;11&quot;
+                         &quot;11&quot;</code></pre>
 </div>
 <div id="gestión-del-módulo-200" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Gestión del módulo 200<a href="gestión-de-datos-con-enaho.html#gestión-del-módulo-200" class="anchor-section" aria-label="Anchor link to header"></a></h2>
