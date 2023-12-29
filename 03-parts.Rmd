@@ -46,6 +46,12 @@ Como observamos, los tres identificadores están presentes para las 44,122 obser
 En tal sentido, las variables "conglome", "vivienda" y "hogar" serán una suerte de "documento de identidad" que nos permitirá individualizar a las viviendas. Con la finalidad de efectuar esto último, usamos la función `group()` del comando `egen`, en la que crearemos una variable denominada "id".
 
 ```{stata, results='hide'}
+egen id = group(conglome vivienda hogar)
+```
+
+Luego, corroboramos que esta variable se encuentre dispersa en toda la muestra y que, además, sean valores únicos, por lo que usaremos las funciones `count`.
+
+```{stata, results='hide'}
 count if id
 ```
 
@@ -53,20 +59,7 @@ count if id
 cd "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\renzo\asesorías\Noemy\data"
 use enaho01-2022-100, clear
 egen id = group(conglome vivienda hogar)
-```
-
-Luego, corroboramos que esta variable se encuentre dispersa en toda la muestra y que, además, sean valores únicos, por lo que usaremos las funciones `count` y `isid`:
-
-
-```{stata, results='hide'}
-isid id
-```
-
-```{stata, echo=FALSE}
-cd "D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\renzo\asesorías\Noemy\data"
-use enaho01-2022-100, clear
-egen id = group(conglome vivienda hogar)
-isid id
+count if id
 ```
 
 ## Gestión del módulo 200

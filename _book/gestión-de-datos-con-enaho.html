@@ -312,19 +312,12 @@ hogar                                               numero secuencial del hogar
                          &quot;11&quot;</code></pre>
 <p>Como observamos, los tres identificadores están presentes para las 44,122 observaciones lo que sugiere que todos las viviendas se encuentran identificadas. Asimismo, existen 5,359 valores únicos de conglomerados; esto nos indica que las 44,122 viviendas de la muestra han sido seleccionadas de tal modo que pertecen a alguno de los 5,359 conglomerados, 649 viviendas y cuentan con algún número secuencial del hogar asignado.</p>
 <p>En tal sentido, las variables “conglome”, “vivienda” y “hogar” serán una suerte de “documento de identidad” que nos permitirá individualizar a las viviendas. Con la finalidad de efectuar esto último, usamos la función <code>group()</code> del comando <code>egen</code>, en la que crearemos una variable denominada “id”.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb19-1"><a href="gestión-de-datos-con-enaho.html#cb19-1" tabindex="-1"></a>cd <span class="st">&quot;D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio</span><span class="ch">\r</span><span class="st">enzo</span><span class="ch">\a</span><span class="st">sesorías\Noemy\data&quot;</span></span>
-<span id="cb19-2"><a href="gestión-de-datos-con-enaho.html#cb19-2" tabindex="-1"></a><span class="kw">use</span> enaho01-2022-100, <span class="kw">clear</span></span>
-<span id="cb19-3"><a href="gestión-de-datos-con-enaho.html#cb19-3" tabindex="-1"></a><span class="kw">egen</span> id = <span class="fu">group</span>(conglome vivienda hogar)</span></code></pre></div>
-<p>Luego, corroboramos que esta variable se encuentre dispersa en toda la muestra y que, además, sean valores únicos, por lo que usaremos las funciones <code>count</code> y <code>isid</code>:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb20-1"><a href="gestión-de-datos-con-enaho.html#cb20-1" tabindex="-1"></a><span class="fu">count</span> <span class="kw">if</span> id</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb19-1"><a href="gestión-de-datos-con-enaho.html#cb19-1" tabindex="-1"></a><span class="fu">count</span> <span class="kw">if</span> id</span></code></pre></div>
 <pre><code>&gt; torio\renzo\asesorías\Noemy\data&quot;
 D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
-&gt; renzo\asesorías\Noemy\data
-
-
-
-  44,122</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb22-1"><a href="gestión-de-datos-con-enaho.html#cb22-1" tabindex="-1"></a><span class="kw">isid</span> id</span></code></pre></div>
+&gt; renzo\asesorías\Noemy\data</code></pre>
+<p>Luego, corroboramos que esta variable se encuentre dispersa en toda la muestra y que, además, sean valores únicos, por lo que usaremos las funciones <code>count</code> y <code>isid</code>:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb21-1"><a href="gestión-de-datos-con-enaho.html#cb21-1" tabindex="-1"></a><span class="kw">isid</span> id</span></code></pre></div>
 <pre><code>&gt; torio\renzo\asesorías\Noemy\data&quot;
 D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
 &gt; renzo\asesorías\Noemy\data</code></pre>

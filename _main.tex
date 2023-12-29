@@ -583,16 +583,6 @@ En tal sentido, las variables ``conglome'', ``vivienda'' y ``hogar'' serán una 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{cd }\StringTok{"D:\textbackslash{}OneDrive {-} Superintendencia Nacional de Servicios de Saneamiento\textbackslash{}Escritorio}\CharTok{\textbackslash{}r}\StringTok{enzo}\CharTok{\textbackslash{}a}\StringTok{sesorías\textbackslash{}Noemy\textbackslash{}data"}
-\KeywordTok{use}\NormalTok{ enaho01{-}2022{-}100, }\KeywordTok{clear}
-\KeywordTok{egen}\NormalTok{ id = }\FunctionTok{group}\NormalTok{(conglome vivienda hogar)}
-\end{Highlighting}
-\end{Shaded}
-
-Luego, corroboramos que esta variable se encuentre dispersa en toda la muestra y que, además, sean valores únicos, por lo que usaremos las funciones \texttt{count} y \texttt{isid}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \FunctionTok{count} \KeywordTok{if}\NormalTok{ id}
 \end{Highlighting}
 \end{Shaded}
@@ -601,11 +591,9 @@ Luego, corroboramos que esta variable se encuentre dispersa en toda la muestra y
 > torio\renzo\asesorías\Noemy\data"
 D:\OneDrive - Superintendencia Nacional de Servicios de Saneamiento\Escritorio\
 > renzo\asesorías\Noemy\data
-
-
-
-  44,122
 \end{verbatim}
+
+Luego, corroboramos que esta variable se encuentre dispersa en toda la muestra y que, además, sean valores únicos, por lo que usaremos las funciones \texttt{count} y \texttt{isid}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
